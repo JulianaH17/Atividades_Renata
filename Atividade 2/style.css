@@ -18,3 +18,17 @@ p {
 h2 {
     color: #AA9989;
 }
+
+/*Seletor de ID*/
+#Links {
+    color: #475fff;
+}
+
+/*Seletor de Classe*/
+.paragrafos {
+    color:darkslategray;
+}
+
+section > a {
+    color: #475fff;
+}
