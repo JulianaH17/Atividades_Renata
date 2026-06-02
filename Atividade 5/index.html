@@ -12,54 +12,152 @@
             border-radius: 10px;
         }
 
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         body {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3%;
+            background-color: #EED7CF;
+        }
+
+        fieldset {
+            width: 100%;
+            padding: 4%;
+            box-sizing: border-box;
+        }
+
+        form {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 4%;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        .itens {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px; 
+        }
+
+        label, p {
+            margin-bottom: 5px;
+        }
+
+        .opcoes {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type=text], input[type=email], input[type=password], select, textarea {
+            width: 100%;
+            padding: 7px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit], input[type=reset] {
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #c48a7d;
+            background-color: #fdf1ed;
+        }
+
+        input[type=submit]:hover {
+            background-color: #2d9f23;
+        }
+
+        input[type=reset]:hover {
+            background-color: #d53333;
+        }
+
+        input[type=date] {
+            padding: 4px;
+        }
+
+        .botoes {
+            display: flex;
             justify-content: center;
-            padding: 20px;
+            gap: 2%;
+        }
+
+        @media (max-width: 600px) {
+            .opcoes {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
         }
         
     </style>
 </head>
 <body>
+    <h1>Formulário para alunos da CompUni</h1>
     <form>
     <fieldset>
-        <legend>Formulário</legend>
+        <legend><b>Formulário</b></legend>
 
+        <div class="itens">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome">
-        <br><br>
+        </div>
 
+        <div class="itens">
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email">
-        <br><br>
+        <input type="email" id="email" name="email" placeholder="@edu.unifil">
+        </div>
 
+        <div class="itens">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha">
-        <br><br>
+        <input type="password" id="senha" name="senha" placeholder="Digite uma senha...">
+        </div>
 
+        <div class="itens">
         <label for="data">Data de nascimento</label>
         <input type="date" id="data" name="data">
-        <br><br>
+        </div>
 
+        <div class="itens">
         <label for="curso">Cursos Presenciais da Computação UniFil</label><br>
         <select id="curso" name="curso">
             <option value="">Selecione</option>
             <option value="cc">Ciência da Computação</option>
             <option value="eng">Engenharia de Software</option>
         </select>
-        <br><br>
+        </div>
 
+        <div class="itens">
         <p>Sexo</p>
 
-        <input type="radio" id="feminino" name="sexo" value="feminino">
-        <label for="feminino">Feminino</label>
+        <div class="opcoes">
+            <input type="radio" id="feminino" name="sexo" value="feminino">
+            <label for="feminino">Feminino</label>
 
-        <input type="radio" id="masculino" name="sexo" value="masculino">
-        <label for="masculino">Masculino</label>
-        <br><br>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+        </div>
+        </div>
 
-        <p>Interesses</p>
+        <div class="itens">
+        <p>Qual foi o assunto mais interessante na matéria da Renata?</p>
 
+        <div class="opcoes">
         <input type="checkbox" id="html" name="interesses" value="html">
         <label for="html">HTML</label>
 
@@ -68,18 +166,23 @@
 
         <input type="checkbox" id="javascript" name="interesses" value="javascript">
         <label for="javascript">JavaScript</label>
-        <br><br>
+        </div>
+        </div>
 
+        <div class="itens">
         <label for="comentarios">Comentários</label><br>
         <textarea id="comentarios" name="comentarios" rows="5" cols="40"></textarea>
-        <br><br>
+        </div>
 
-        <label for="foto">Upload de foto</label>
+        <div class="itens">
+        <label for="foto">Faça o upload de uma foto sua</label>
         <input type="file" id="foto" name="foto" accept="image/*">
-        <br><br>
+        </div>
 
+        <div class="botoes">
         <input type="submit" value="Enviar">
         <input type="reset" value="Limpar">
+        </div>
     </fieldset>
 </form>
     <!--display: none (serve para sumir com algo quando muda de formato)-->
